@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>People In Space</title>
+
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
+    <meta name="msapplication-TileColor" content="#da532c" />
+    <meta name="theme-color" content="#ffffff" />
+
+    <!-- FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Raleway:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style/normalize.css" />
+    <link rel="stylesheet" href="style/screen.css" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+      integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+      crossorigin=""
+    />
+
+    <!-- JS -->
+    <script src="script/dataHandler.js"></script>
+    <script src="script/app.js"></script>
+    <script src="script/slider.js"></script>
+    <script
+      src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+      integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+      crossorigin=""
+    ></script>
+  </head>
+
+  <body>
+    <div class="o-container o-container--lg o-container--boxed u-bg-theme">
+      <header class="c-header">
+        <a href="/" class="c-logo">
+          <img
+            class="c-logo__img"
+            src="/img/logo.png"
+            alt="SpacePeople Logo"
+            width="48"
+            height="48"
+          />
+          <p class="c-logo__text">SpacePeople</p>
+        </a>
+      </header>
+      <main class="o-row">
+        <div class="o-container c-body">
+          <div class="c-title">
+            <h1 class="c-title__main js-counter">... People</h1>
+            <h2 class="c-title__sub">Are out there right now...</h2>
+          </div>
+          <article class="c-spacepeople js-spacepepole">
+            <!-- <section class="c-spaceman">
+              <h3 class="c-spaceman__name">Mark Vande Hei</h3>
+              <span class="c-spaceman__desc">Aboard ISS</span>
+            </section> -->
+          </article>
+          <div class="c-btn-expand c-btn-expand--invisible js-expand-button">
+            <input
+              type="checkbox"
+              class="
+                c-btn-expand__checkbox
+                js-expand-checkbox
+                o-hide-accessible
+              "
+              id="expand"
+            />
+            <label class="c-btn-expand__label" for="expand">
+              <svg
+                class="c-btn-expand__icon"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+              >
+                <path d="M0 0h24v24H0V0z" fill="none" />
+                <path d="M12 8l-6 6 1.41 1.41L12 10.83l4.59 4.58L18 14l-6-6z" />
+              </svg>
+            </label>
+          </div>
+          <article class="c-card c-map">
+            <div class="c-card__content">
+              <h3 class="c-map__title">ISS Current location</h3>
+              <div class="c-map__subtitle">
+                <p class="c-map__location js-geolocation">
+                  The International Space Station is currently above ..
+                </p>
+                <button class="c-map__button js-center-button">CENTER</button>
+              </div>
+            </div>
+            <div class="c-map__map" id="issmap"></div>
+          </article>
+          <div class="c-slider">
+            <input
+              class="c-slider__checkbox o-hide-accessible js-slider-arrow"
+              type="checkbox"
+              id="slider"
+            />
+            <label class="c-slider__label--checkbox" for="slider">
+              <svg
+                class="c-slider__icon"
+                xmlns="http://www.w3.org/2000/svg"
+                height="24px"
+                viewBox="0 0 24 24"
+              >
+                <path d="M0 0h24v24H0V0z" fill="none" />
+                <path d="M12 8l-6 6 1.41 1.41L12 10.83l4.59 4.58L18 14l-6-6z" />
+              </svg>
+            </label>
+            <div
+              class="c-slider__body c-slider__body--invisible js-slider-body"
+            >
+              <label class="c-slider__label" for="themeColor">
+                Change Theme
+              </label>
+              <input
+                type="range"
+                class="c-slider__slider js-color-slider"
+                value="352"
+                min="0"
+                max="360"
+                name=""
+                id="themeColor"
+              />
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>
